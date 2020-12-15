@@ -50,8 +50,7 @@ const Calculating = (props) => {
           console.log(props)
           setPred(predicted_class);
         }}
-        block
-      >
+        block>
         Рассчитать
       </Button>
     <Output pred={pred} /> 

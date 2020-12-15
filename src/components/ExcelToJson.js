@@ -1,7 +1,7 @@
 import React from "react";
 import * as XLSX from "xlsx";
 import {Form, Button} from 'react-bootstrap';
-import Table from "./Table";
+import TableFromExcel from "./TableFromExcel";
 
 
 class ExcelToJson extends React.Component {
@@ -11,7 +11,8 @@ class ExcelToJson extends React.Component {
     this.state = {
       file: "",
       name: "",
-      excel: "",
+      excel: [],
+      display: false
     };
     
   }
@@ -26,8 +27,6 @@ class ExcelToJson extends React.Component {
     var file = e.target.files[0];
     var namef = e.target.files[0].name;
     this.setState({ file: file, name: namef});
-
-    console.log(this.state.file);
     
   }
 
@@ -70,8 +69,7 @@ class ExcelToJson extends React.Component {
       result.push(obj);
     }
   
-    
-    return JSON.stringify(result); 
+    return result; 
     
   }
 
@@ -94,11 +92,14 @@ class ExcelToJson extends React.Component {
         <Button variant="success"
           onClick={() => {
             this.readFile();
+            this.setState( {display: !this.state.display});
           }}
         block>
           Применить датасет
         </Button>
- {this.state.excel}
+        { this.state.display ? <TableFromExcel state={this.state.excel} /> : '' }
+        
+
       </div>
       
     );
