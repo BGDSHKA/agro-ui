@@ -41,7 +41,19 @@ const TableFromExcel = (props) => {
             x13: e.x13,
             x14: e.x14,
           });
-          e.y1=predicted_class;    
+          e.y1=predicted_class;
+          switch(e.y1) {
+            case '0':  e.y1 = "Пар";
+            break;
+            case '1':  e.y1 = "Озимую пшеницу";
+            break;
+            case '2':  e.y1 = "Сою";
+            break;
+            case '3':  e.y1 = 'Ячмень';
+            break;
+            case '4':  e.y1 = 'Сахарную свеклу';
+            break;
+          };    
     });
     
 

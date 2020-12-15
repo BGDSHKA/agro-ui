@@ -5,7 +5,7 @@ import Rpd from './components/Rpd';
 import Rpn from './components/Rpn';
 
 function App() {
-  const [btn, setBtn] = useState(true);
+  const [btn, setBtn] = useState(false);
  
   return (
     <div>
