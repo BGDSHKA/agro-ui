@@ -11,7 +11,7 @@ function App() {
     <div>
       <Container>
         <Button variant="success" onClick={ () => {setBtn(true);}} block>Рассчёт по данным</Button>
-        <Button variant="success" onClick={ () => {setBtn(false);}} block>Поиск по номеру поля</Button>
+        <Button variant="success" onClick={ () => {setBtn(false);}} block>Рассчёт по excel данным</Button>
         { btn ?  <Rpd /> : <Rpn /> }
       </Container>
     </div>

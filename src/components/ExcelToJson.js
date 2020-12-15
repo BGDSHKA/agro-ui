@@ -11,7 +11,7 @@ class ExcelToJson extends React.Component {
     this.state = {
       file: "",
       name: "",
-      excel: []
+      excel: "",
     };
     
   }
@@ -36,19 +36,17 @@ class ExcelToJson extends React.Component {
    
     const reader = new FileReader();
     reader.onload = (evt) => {
-      // evt = on_file_select event
-      /* Parse data */
+
       const bstr = evt.target.result;
       const wb = XLSX.read(bstr, { type: "binary" });
-      /* Get first worksheet */
+   
       const wsname = wb.SheetNames[0];
       const ws = wb.Sheets[wsname];
-      /* Convert array of arrays */
-      const data = XLSX.utils.sheet_to_csv(ws, { header: 1 });
-      /* Update state */
-      console.log("Data>>>" + data);// shows that excel data is read
-      console.log(this.convertToJson(data)); // shows data in json format
-       
+   
+      var data = XLSX.utils.sheet_to_csv(ws, { header: 1 });
+   
+     
+      this.setState({excel: this.convertToJson(data)})
      
     };
     reader.readAsBinaryString(f);
@@ -71,13 +69,12 @@ class ExcelToJson extends React.Component {
 
       result.push(obj);
     }
-    this.setState({ excel: result});
-    //return result; //JavaScript object
-    return JSON.stringify(result); //JSON
+  
+    
+    return JSON.stringify(result); 
     
   }
 
- 
 
   render() {
     return (
@@ -101,7 +98,7 @@ class ExcelToJson extends React.Component {
         block>
           Применить датасет
         </Button>
- {console.log(this.excel)}
+ {this.state.excel}
       </div>
       
     );
