@@ -5,7 +5,7 @@ import { useState } from "react";
 import Output from "./Output";
 import data from "./Data"
 
-const Calculating = (props) => {
+const Calculating = ({props}) => {
   const [pred, setPred] = useState(0);
 
   return (
@@ -53,7 +53,9 @@ const Calculating = (props) => {
         block>
         Рассчитать
       </Button>
-    <Output pred={pred} /> 
+     { pred 
+     ? <Output pred={pred} /> 
+     : '' } 
     </>
   );
 };

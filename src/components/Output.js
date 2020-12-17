@@ -14,6 +14,8 @@ let plant = '';
     break;
     case '4':  plant = 'Сахарную свеклу';
     break;
+    default:
+              break;
 }
 
     return (

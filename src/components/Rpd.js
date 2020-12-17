@@ -2,10 +2,10 @@ import React from 'react'
 import InputForm from './InputForm'
 
 
-const Rpd = () => {
+const Rpd = (props) => {
     return (
         <>
-            <InputForm />
+            <InputForm props={props}/>
         </>
     )
 }

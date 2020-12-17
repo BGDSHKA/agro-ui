@@ -53,22 +53,26 @@ const TableFromExcel = (props) => {
             break;
             case '4':  e.y1 = 'Сахарную свеклу';
             break;
+            default:
+              break;
           };    
     });
     
 
 let array = props.state.map(u => 
-<tbody><tr><th key={u.x1}>{u.x1}</th><td>{u.x2}</td><td>{u.x3}</td>
+<tr><th key={u.x1}>{u.x1}</th><td>{u.x2}</td><td>{u.x3}</td>
 <td>{u.x4}</td><td>{u.x5}</td><td>{u.x6}</td><td>{u.x7}</td><td>{u.x8}</td>
 <td>{u.x9}</td><td>{u.x10}</td><td>{u.x11}</td><td>{u.x12}</td>
-<td>{u.x13}</td><td>{u.x14}</td><td>{u.y1}</td></tr></tbody>)
+<td>{u.x13}</td><td>{u.x14}</td><td>{u.y1}</td></tr>)
 console.log(props.state)
     return (
         <Table size='sm' responsive>
             <thead><tr><th>№</th><th>x2</th><th>x3</th><th>x4</th>
             <th>x5</th><th>x6</th><th>x7</th><th>x8</th><th>x9</th><th>x10</th>
             <th>x11</th><th>x12</th><th>x13</th><th>x14</th><th>y1</th></tr></thead>
+            <tbody>
             {array}
+            </tbody>
         </Table>
     )
 }
