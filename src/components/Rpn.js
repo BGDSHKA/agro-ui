@@ -1,12 +1,12 @@
-import React from 'react'
-import ExcelToJson from './ExcelToJson'
+import React from "react";
+import ExcelToJson from "./ExcelToJson";
 
 const Rpn = () => {
-    return (
-        <>
-           <ExcelToJson /> 
-        </>
-    )
-}
+  return (
+    <>
+      <ExcelToJson />
+    </>
+  );
+};
 
-export default Rpn
+export default Rpn;

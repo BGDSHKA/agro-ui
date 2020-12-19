@@ -3,14 +3,15 @@ import DecisionTree from "decision-tree";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 import Output from "./Output";
-import data from "./Data"
+import data from "./Data";
 
-const Calculating = ({props}) => {
+const Calculating = ({ props }) => {
   const [pred, setPred] = useState(0);
 
   return (
     <>
-      <Button variant="success"
+      <Button
+        variant="success"
         onClick={() => {
           const training_data = data;
 
@@ -47,15 +48,14 @@ const Calculating = ({props}) => {
             x13: props.x13,
             x14: props.x14,
           });
-          console.log(props)
+          console.log(props);
           setPred(predicted_class);
         }}
-        block>
+        block
+      >
         Рассчитать
       </Button>
-     { pred 
-     ? <Output pred={pred} /> 
-     : '' } 
+      {pred ? <Output pred={pred} /> : ""}
     </>
   );
 };
