@@ -6,5 +6,5 @@ http://agro-react.surge.sh/ - развернутое приложение
 может использовать приложение для получения рекомендаций по своим данным. 
 
 **Stack:** <br />
-React
+React <br />
 React-Bootstrap
