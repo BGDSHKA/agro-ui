@@ -7,4 +7,5 @@ http://agro-react.surge.sh/ - развернутое приложение
 
 **Stack:** <br />
 React <br />
-React-Bootstrap
+React-Bootstrap<br />
+decision-tree
